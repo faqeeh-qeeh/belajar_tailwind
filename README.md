@@ -8,14 +8,19 @@ Repository ini berisi kode pembelajaran Tailwind CSS
 - Membuat komponen responsif dengan Tailwind
 
 ## 📁 Struktur Proyek
+```
 belajar_tailwind/
-├── img
-├── index.html # File utama pembelajaran
-└── README.md # Dokumentasi proyek
+    img # tempat menyimpan gambar
+    index.html # File utama pembelajaran
+    README.md # Dokumentasi proyek
+```
 
 
 ## 🚀 Cara Menjalankan
 1. Clone repository ini
+    ```sh
+    git clone https://github.com/faqeeh-qeeh/belajar_tailwind
+    ```
 2. Buka file `index.html` di browser
 3. Mulai eksplorasi dan modifikasi kode
 
