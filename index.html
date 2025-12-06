@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Belajar Tailwind CSS - Panduan Pemula</title>
+    <link rel="icon" type="image/x-icon" href="img/logo_tailwind.png" alt="Logo Tailwind CSS">
+    <!-- impor Tailwind CSS dari CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .highlight-box {
+            transition: all 0.3s ease;
+        }
+        .highlight-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .code-block {
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header dengan navigasi -->
+    <header class="bg-gradient-to-r from-green-700 via-green-600 to-cyan-600 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-6">
+            <h1 class="text-3xl md:text-4xl font-bold mb-2"><img class="inline-block w-10 h-10 mr-3" src="img/logo_tailwind.png" alt="logo_tailwind"> Belajar Tailwind CSS</h1>
+            <p class="text-lg opacity-90 ml-3">Panduan interaktif untuk memahami dasar-dasar Tailwind CSS</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <!-- Bagian 1: Pengenalan -->
+        <section class="mb-12">
+            <div class="bg-white rounded-xl shadow-md p-6 mb-6 highlight-box">
+                <h2 class="text-2xl font-bold text-blue-700 mb-4">📚 Apa itu Tailwind CSS?</h2>
+                <p class="mb-4">Tailwind CSS adalah <strong>framework CSS utility-first</strong> yang memungkinkan kita membangun desain langsung di HTML dengan kelas-kelas utilitas.</p>
+                
+                <div class="bg-gray-100 p-4 rounded-lg my-4">
+                    <p class="font-semibold text-gray-700">💡 <strong>Konsep Utama:</strong></p>
+                    <ul class="list-disc pl-5 mt-2 space-y-1">
+                        <li>Tidak ada komponen siap pakai seperti Bootstrap</li>
+                        <li>Kita membangun desain dengan menggabungkan kelas-kelas kecil</li>
+                        <li>Memudahkan customisasi tanpa meninggalkan HTML</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian 2: Dasar-Dasar Utility Classes -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-blue-700 mb-6">🎨 Dasar-Dasar Utility Classes</h2>
+            
+            <!-- Contoh 1: Padding dan Margin -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-white rounded-xl shadow-md p-6 highlight-box">
+                    <h3 class="text-xl font-bold text-purple-600 mb-4">1. Padding & Margin</h3>
+                    <p class="mb-4">Tailwind menggunakan sistem spacing yang konsisten. <code class="bg-gray-100 px-1 rounded">p-4</code> berarti padding 1rem (16px).</p>
+                    
+                    <!-- Demo: Box dengan padding berbeda -->
+                    <div class="space-y-4">
+                        <div class="p-2 bg-blue-100 border border-blue-300 rounded">
+                            <p class="text-sm font-medium">Kelas: <code class="code-block">p-2</code> (padding kecil)</p>
+                            <div class="p-2 bg-blue-200 mt-1 rounded">konten dengan padding kecil</div>
+                        </div>
+                        
+                        <div class="p-4 bg-green-100 border border-green-300 rounded">
+                            <p class="text-sm font-medium">Kelas: <code class="code-block">p-4</code> (padding medium)</p>
+                            <div class="p-4 bg-green-200 mt-1 rounded">konten dengan padding medium</div>
+                        </div>
+                        
+                        <div class="p-8 bg-red-100 border border-red-300 rounded">
+                            <p class="text-sm font-medium">Kelas: <code class="code-block">p-8</code> (padding besar)</p>
+                            <div class="p-8 bg-red-200 mt-1 rounded">konten dengan padding besar</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded">
+                        <p class="text-sm"><strong>Catatan:</strong> <code class="code-block">p-*</code> untuk padding, <code class="code-block">m-*</code> untuk margin. 
+                        Bisa spesifik arah: <code class="code-block">pt-4</code> (padding top), <code class="code-block">ml-2</code> (margin left).</p>
+                    </div>
+                </div>
+                
+                <!-- Contoh 2: Warna dan Background -->
+                <div class="bg-white rounded-xl shadow-md p-6 highlight-box">
+                    <h3 class="text-xl font-bold text-purple-600 mb-4">2. Warna & Background</h3>
+                    <p class="mb-4">Tailwind punya sistem warna yang konsisten. Setiap warna memiliki variasi dari 50-900.</p>
+                    
+                    <!-- Demo: Warna -->
+                    <div class="grid grid-cols-3 gap-2 mb-4">
+                        <div class="p-3 bg-blue-500 text-white text-center rounded">blue-500</div>
+                        <div class="p-3 bg-green-500 text-white text-center rounded">green-500</div>
+                        <div class="p-3 bg-red-500 text-white text-center rounded">red-500</div>
+                        <div class="p-3 bg-yellow-500 text-white text-center rounded">yellow-500</div>
+                        <div class="p-3 bg-purple-500 text-white text-center rounded">purple-500</div>
+                        <div class="p-3 bg-pink-500 text-white text-center rounded">pink-500</div>
+                    </div>
+                    
+                    <!-- Demo: Text Color -->
+                    <div class="mt-6">
+                        <p class="mb-2 font-medium">Warna teks:</p>
+                        <p class="text-blue-600">Ini teks biru (<code class="code-block">text-blue-600</code>)</p>
+                        <p class="text-green-600">Ini teks hijau (<code class="code-block">text-green-600</code>)</p>
+                        <p class="text-red-600">Ini teks merah (<code class="code-block">text-red-600</code>)</p>
+                    </div>
+                    
+                    <div class="mt-4 p-3 bg-yellow-50 border border-yellow-200 rounded">
+                        <p class="text-sm"><strong>Tips:</strong> Coba ubah angka setelah nama warna (contoh: blue-100, blue-200, ..., blue-900) untuk melihat variasi terang/gelap.</p>
+                        <p>semakin kecil angka, semakin terang warnanya. semakin besar angka, semakin gelap warnanya.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Contoh 3: Typography -->
+            <div class="bg-white rounded-xl shadow-md p-6 mb-8 highlight-box">
+                <h3 class="text-xl font-bold text-purple-600 mb-4">3. Typography</h3>
+                <p class="mb-4">Tailwind menyediakan kelas untuk mengatur ukuran, ketebalan, dan alignment teks.</p>
+                
+                <div class="space-y-3">
+                    <h1 class="text-4xl font-bold">Ini Heading 1 (<code class="code-block">text-4xl font-bold</code>)</h1>
+                    <h2 class="text-2xl font-semibold">Ini Heading 2 (<code class="code-block">text-2xl font-semibold</code>)</h2>
+                    <h3 class="text-xl font-medium">Ini Heading 3 (<code class="code-block">text-xl font-medium</code>)</h3>
+                    <p class="text-lg">Ini paragraf besar (<code class="code-block">text-lg</code>)</p>
+                    <p>Ini paragraf normal</p>
+                    <p class="text-sm text-gray-600">Ini teks kecil dan abu-abu (<code class="code-block">text-sm text-gray-600</code>)</p>
+                    
+                    <div class="flex space-x-4 mt-4">
+                        <p class="text-left border p-2 rounded w-1/3">Rata kiri (<code class="code-block">text-left</code>)</p>
+                        <p class="text-center border p-2 rounded w-1/3">Rata tengah (<code class="code-block">text-center</code>)</p>
+                        <p class="text-right border p-2 rounded w-1/3">Rata kanan (<code class="code-block">text-right</code>)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian 3: Flexbox & Grid -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-blue-700 mb-6">📐 Layout: Flexbox & Grid</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Flexbox -->
+                <div class="bg-white rounded-xl shadow-md p-6 highlight-box">
+                    <h3 class="text-xl font-bold text-purple-600 mb-4">Flexbox dengan Tailwind</h3>
+                    <p class="mb-4"><code class="code-block">flex</code> mengubah elemen menjadi flex container. Kita bisa atur alignment dan justify content.</p>
+                    
+                    <div class="flex flex-col space-y-4">
+                        <div class="p-3 bg-blue-50 rounded border">
+                            <p class="font-medium mb-2">Contoh 1: <code class="code-block">flex justify-between</code></p>
+                            <div class="flex justify-between p-2 bg-gray-100 rounded">
+                                <div class="p-3 bg-blue-300 rounded">Item 1</div>
+                                <div class="p-3 bg-blue-300 rounded">Item 2</div>
+                                <div class="p-3 bg-blue-300 rounded">Item 3</div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-3 bg-green-50 rounded border">
+                            <p class="font-medium mb-2">Contoh 2: <code class="code-block">flex justify-center items-center</code></p>
+                            <div class="flex justify-center items-center h-24 bg-gray-100 rounded">
+                                <div class="p-3 bg-green-300 rounded">Item di tengah</div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-3 bg-purple-50 rounded border">
+                            <p class="font-medium mb-2">Contoh 3: <code class="code-block">flex flex-col</code> (kolom vertikal)</p>
+                            <div class="flex flex-col space-y-2 p-2 bg-gray-100 rounded">
+                                <div class="p-3 bg-purple-300 rounded">Item atas</div>
+                                <div class="p-3 bg-purple-300 rounded">Item tengah</div>
+                                <div class="p-3 bg-purple-300 rounded">Item bawah</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Grid -->
+                <div class="bg-white rounded-xl shadow-md p-6 highlight-box">
+                    <h3 class="text-xl font-bold text-purple-600 mb-4">Grid dengan Tailwind</h3>
+                    <p class="mb-4"><code class="code-block">grid</code> mengaktifkan CSS Grid. Kita bisa tentukan kolom dengan <code class="code-block">grid-cols-*</code>.</p>
+                    
+                    <div class="space-y-4">
+                        <div class="p-3 bg-yellow-50 rounded border">
+                            <p class="font-medium mb-2">Contoh 1: <code class="code-block">grid grid-cols-3 gap-2</code></p>
+                            <div class="grid grid-cols-3 gap-2">
+                                <div class="p-4 bg-yellow-200 rounded text-center">Kolom 1</div>
+                                <div class="p-4 bg-yellow-200 rounded text-center">Kolom 2</div>
+                                <div class="p-4 bg-yellow-200 rounded text-center">Kolom 3</div>
+                            </div>
+                        </div>
+                        
+                        <div class="p-3 bg-pink-50 rounded border">
+                            <p class="font-medium mb-2">Contoh 2: Grid Responsif</p>
+                            <p class="text-sm mb-2"><code class="code-block">grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3</code></p>
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                                <div class="p-3 bg-pink-200 rounded text-center">Item 1</div>
+                                <div class="p-3 bg-pink-200 rounded text-center">Item 2</div>
+                                <div class="p-3 bg-pink-200 rounded text-center">Item 3</div>
+                                <div class="p-3 bg-pink-200 rounded text-center">Item 4</div>
+                                <div class="p-3 bg-pink-200 rounded text-center">Item 5</div>
+                                <div class="p-3 bg-pink-200 rounded text-center">Item 6</div>
+                            </div>
+                            <p class="text-sm mt-2 text-gray-600">Coba ubah ukuran jendela browser untuk melihat perubahan layout!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian 4: Responsive Design -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-blue-700 mb-6">📱 Responsive Design</h2>
+            
+            <div class="bg-white rounded-xl shadow-md p-6 highlight-box">
+                <p class="mb-4">Tailwind menggunakan <strong>mobile-first breakpoints</strong>. Kelas tanpa prefix berlaku untuk semua ukuran, sementara prefiks seperti <code class="code-block">md:</code>, <code class="code-block">lg:</code> hanya berlaku mulai breakpoint tertentu.</p>
+                
+                <div class="space-y-4">
+                    <div class="p-4 bg-blue-50 rounded border">
+                        <p class="font-medium mb-2">Contoh: Teks berubah ukuran di breakpoint berbeda</p>
+                        <div class="text-center p-4 bg-gray-100 rounded">
+                            <p class="text-base md:text-lg lg:text-xl font-medium">
+                                Ukuran teks ini berubah: kecil di mobile, sedang di tablet, besar di desktop!
+                            </p>
+                            <p class="text-sm text-gray-600 mt-2">
+                                Kelas: <code class="code-block">text-base md:text-lg lg:text-xl</code>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="p-4 bg-green-50 rounded border">
+                        <p class="font-medium mb-2">Contoh: Layout berubah berdasarkan ukuran layar</p>
+                        <div class="flex flex-col md:flex-row gap-4 p-4 bg-gray-100 rounded">
+                            <div class="flex-1 p-4 bg-green-200 rounded text-center">Sidebar (muncul di md+)</div>
+                            <div class="flex-2 p-4 bg-green-300 rounded text-center">Konten Utama</div>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-2">
+                            Dengan <code class="code-block">flex-col md:flex-row</code>, di mobile tampil vertikal, di tablet+ tampil horizontal.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-4 bg-yellow-50 border border-yellow-200 rounded">
+                    <h4 class="font-bold text-yellow-800 mb-2">📋 Breakpoints Default Tailwind:</h4>
+                    <ul class="grid grid-cols-2 md:grid-cols-5 gap-2 text-sm">
+                        <li class="p-2 bg-white rounded border"><strong>sm:</strong> ≥640px</li>
+                        <li class="p-2 bg-white rounded border"><strong>md:</strong> ≥768px</li>
+                        <li class="p-2 bg-white rounded border"><strong>lg:</strong> ≥1024px</li>
+                        <li class="p-2 bg-white rounded border"><strong>xl:</strong> ≥1280px</li>
+                        <li class="p-2 bg-white rounded border"><strong>2xl:</strong> ≥1536px</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian 5: Contoh Komponen Sederhana -->
+        <section class="mb-12">
+            <h2 class="text-2xl font-bold text-blue-700 mb-6">🧩 Contoh Komponen</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Card Component -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden highlight-box">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Contoh Card</h3>
+                        <p class="text-gray-600 mb-4">Ini adalah contoh komponen card yang dibangun dengan Tailwind CSS.</p>
+                        
+                        <div class="flex items-center mb-4">
+                            <div class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold">F</div>
+                            <div class="ml-3">
+                                <p class="font-medium">Faqih Belajar</p>
+                                <p class="text-sm text-gray-500">2 jam yang lalu</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                            <p class="text-blue-800">"Tailwind CSS sangat memudahkan styling tanpa perlu menulis CSS custom!"</p>
+                        </div>
+                        
+                        <div class="flex justify-between">
+                            <button class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition duration-200">
+                                <span class="flex items-center">
+                                    <span class="mr-1">👍</span> Suka
+                                </span>
+                            </button>
+                            <button class="px-4 py-2 border border-gray-300 hover:bg-gray-50 rounded-lg transition duration-200">
+                                Komentar
+                            </button>
+                        </div>
+                    </div>
+                    <div class="px-6 py-3 bg-gray-50 border-t border-gray-100">
+                        <p class="text-sm text-gray-500">Kode ini menggunakan banyak kelas Tailwind untuk styling.</p>
+                    </div>
+                </div>
+                
+                <!-- Button Component -->
+                <div class="bg-white rounded-xl shadow-lg p-6 highlight-box">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4">Contoh Button Variants</h3>
+                    <p class="text-gray-600 mb-6">Tailwind memudahkan membuat variasi button dengan cepat.</p>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <p class="font-medium mb-2">Button Primary:</p>
+                            <button class="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-lg shadow hover:shadow-lg transition duration-300 transform hover:-translate-y-1">
+                                Button Primary
+                            </button>
+                            <p class="text-sm text-gray-500 mt-1"><code class="code-block">bg-gradient-to-r from-blue-500 to-purple-600</code></p>
+                        </div>
+                        
+                        <div>
+                            <p class="font-medium mb-2">Button Secondary:</p>
+                            <button class="px-6 py-3 border-2 border-blue-500 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition duration-200">
+                                Button Secondary
+                            </button>
+                        </div>
+                        
+                        <div>
+                            <p class="font-medium mb-2">Button Danger:</p>
+                            <button class="px-6 py-3 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition duration-200 focus:ring-2 focus:ring-red-300">
+                                Hapus Data
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian 6: Tips & Kesimpulan -->
+        <section class="mb-12">
+            <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl shadow-md p-6 border border-blue-100">
+                <h2 class="text-2xl font-bold text-blue-700 mb-4">💡 Tips Belajar Tailwind CSS</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-bold text-purple-600 mb-3">Hal yang Perlu Diingat</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Tailwind adalah <strong>utility-first</strong>, bukan komponen siap pakai</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Gunakan <strong>VS Code dengan extension Tailwind CSS IntelliSense</strong> untuk autocomplete</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Pelajari pola naming: <code class="code-block text-sm">property-direction-size</code> atau <code class="code-block text-sm">property-size</code></span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-2">✓</span>
+                                <span>Jangan takut menggabungkan banyak kelas, itu normal di Tailwind</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold text-purple-600 mb-3">Sumber Belajar</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-blue-500 mr-2">🔗</span>
+                                <span><a href="https://tailwindcss.com/docs" class="text-blue-600 hover:underline font-medium" target="_blank">Dokumentasi Resmi Tailwind</a> - Lengkap dan terstruktur</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-500 mr-2">🔗</span>
+                                <span><a href="https://tailwindcomponents.com" class="text-blue-600 hover:underline font-medium" target="_blank">Tailwind Components</a> - Contoh komponen gratis</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-500 mr-2">🔗</span>
+                                <span><a href="https://play.tailwindcss.com" class="text-blue-600 hover:underline font-medium" target="_blank">Tailwind Play</a> - Sandbox online untuk bereksperimen</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="mt-8 p-4 bg-white rounded-lg border">
+                    <h3 class="text-lg font-bold text-gray-800 mb-2">🎯 Kesimpulan Belajar</h3>
+                    <p>Tailwind CSS mungkin terasa asing di awal karena pendekatan utility-first-nya, tetapi setelah terbiasa, kecepatan development akan meningkat signifikan. Kuncinya adalah <strong>melatih muscle memory</strong> dengan sering membuat komponen dan mengingat pola naming class-nya.</p>
+                    <p class="mt-2">Selanjutnya coba buat proyek kecil seperti landing page atau dashboard sederhana untuk melatih skill Tailwind CSS-mu!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h3 class="text-xl font-bold mb-2">Belajar Tailwind CSS - PanduanBacaan Pemula</h3>
+                <p class="text-gray-400 mb-4">Dibuat dengan ❤️</p>
+                <div class="flex justify-center space-x-4">
+                    <div class="px-4 py-2 bg-gray-700 rounded-lg">HTML</div>
+                    <div class="px-4 py-2 bg-blue-600 rounded-lg">Tailwind CSS</div>
+                    <div class="px-4 py-2 bg-gray-700 rounded-lg">JavaScript</div>
+                </div>
+                <p class="mt-6 text-gray-500 text-sm">Coba edit kode ini di editor untuk bereksperimen dengan Tailwind!</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script untuk interaksi sederhana -->
+    <script>
+        // Menambahkan interaksi sederhana untuk tombol like
+        document.addEventListener('DOMContentLoaded', function() {
+            const likeButton = document.querySelector('button.bg-blue-500');
+            if (likeButton) {
+                likeButton.addEventListener('click', function() {
+                    const likeText = this.querySelector('span');
+                    if (likeText.textContent.includes('Suka')) {
+                        likeText.innerHTML = '<span class="mr-1">👍</span> Disukai!';
+                        this.classList.remove('bg-blue-500', 'hover:bg-blue-600');
+                        this.classList.add('bg-green-500', 'hover:bg-green-600');
+                    } else {
+                        likeText.innerHTML = '<span class="mr-1">👍</span> Suka';
+                        this.classList.remove('bg-green-500', 'hover:bg-green-600');
+                        this.classList.add('bg-blue-500', 'hover:bg-blue-600');
+                    }
+                });
+            }
+            
+            // Menambahkan efek hover pada semua komponen card
+            const cards = document.querySelectorAll('.highlight-box');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
